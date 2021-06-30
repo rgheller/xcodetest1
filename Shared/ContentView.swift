@@ -17,7 +17,10 @@ struct ContentView: View {
 
             Text("Hello, world 2!")
                 .padding()
+                .rotationEffect(.degrees(30))
+                
         }
+        
     }
 }
 
