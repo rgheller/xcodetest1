@@ -7,18 +7,30 @@
 
 import SwiftUI
 
+struct InnerView: View {
+    var body: some View {
+
+        Text("Hello, world!")
+            .padding()
+            .font(.largeTitle)
+
+        Text("Hello, world 3!")
+            .padding()
+            .rotationEffect(.degrees(30))
+        
+        Image(systemName: "car.fill")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         
         VStack {
-            
-        Text("Hello, world!")
-            .padding()
-
-            Text("Hello, world 2!")
-                .padding()
-                .rotationEffect(.degrees(30))
-                
+            InnerView()
+                .font(.largeTitle)
+                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
         }
         
     }
@@ -27,6 +39,9 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewDevice("iPhone 12")
+            .previewDisplayName("iPhone 12")
+            .environment(\.colorScheme, .light)
     }
 }
 
